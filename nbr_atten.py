@@ -65,9 +65,10 @@ class HomoAttention(nn.Module):
                     torch.sum(torch.exp(unnormalized_attention) * sampled_neighbor_mat, dim=1, keepdim=True).repeat(1, len(
                         unique_nodes_list)))
                 h_prime = normalized_attention.mm(nbr_embedding)
+                h_prime = torch.sigmoid(h_prime)
                 h_prime = torch.cat([node_embedding, h_prime], dim=1)
                 h_prime = self.gcn2embed(h_prime)
-                h_prime = F.normalize(h_prime)
+                h_prime = torch.sigmoid(h_prime)
             else:
                 pass
 
