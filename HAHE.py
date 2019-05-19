@@ -81,7 +81,7 @@ if __name__ == '__main__':
     parser.add_argument('--homo_dim', type=int, default=128, help='Dimension of Homo embedding')
     parser.add_argument('--embed_dim', type=int, default=128, help='Dimension of embedding')
     parser.add_argument('--batch', type=int, default=512, help='Batch Size')
-    parser.add_argument('--hidden', type=int, default=16, help='Number of hidden units')
+    parser.add_argument('--hidden', type=int, default=64, help='Number of hidden units')
     parser.add_argument('--epoch', type=int, default=200, help='Number of Epoches')
     parser.add_argument('--lr', type=float, default=5e-3, help='Learning Rate')
     parser.add_argument('--decay', type=float, default=0.001, help='Weight decay for Adam')
